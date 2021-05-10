@@ -121,7 +121,8 @@
 				"typeProperties": {
 					"url": "https://3c332a2c-ec79-4f57-8ebe-fa1b4db76182.webhook.we.azure-automation.net/webhooks?token=nTiqbMWcj4zhnjpcL6bN1bCJlfG8x4jy0fJ6nyv3zqs%3d",
 					"method": "POST",
-					"timeout": "00:10:00"
+					"timeout": "00:10:00",
+					"reportStatusOnCallBack": true
 				}
 			}
 		],
