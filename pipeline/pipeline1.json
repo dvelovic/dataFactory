@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select TOP 20  * from dbo.categories",
+						"sqlReaderQuery": "select TOP 5 * from dbo.categories",
 						"queryTimeout": "00:01:00",
 						"isolationLevel": "ReadUncommitted",
 						"partitionOption": "None"
