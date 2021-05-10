@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "testdatafactory431"
+		},
+		"PartsUnlimited_connectionString": {
+			"value": ""
+		},
+		"StorageForDataLake_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://storagefordatalake.azuredatalakestore.net/webhdfs/v1"
+		},
+		"StorageForDataLake_properties_typeProperties_tenant": {
+			"value": "ea2972ca-bff1-4bbd-a073-1f00e6c9449c"
+		},
+		"StorageForDataLake_properties_typeProperties_subscriptionId": {
+			"value": "6061fb8b-fd83-4e4f-b20f-043475d6acac"
+		},
+		"StorageForDataLake_properties_typeProperties_resourceGroupName": {
+			"value": "RG-Svastara"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

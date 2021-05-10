@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "testdatafactory431"
+		},
+		"PartsUnlimited_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'PartsUnlimited'"
+		},
+		"StorageForDataLake_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://storagefordatalake.azuredatalakestore.net/webhdfs/v1"
+		},
+		"StorageForDataLake_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "ea2972ca-bff1-4bbd-a073-1f00e6c9449c"
+		},
+		"StorageForDataLake_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "6061fb8b-fd83-4e4f-b20f-043475d6acac"
+		},
+		"StorageForDataLake_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "RG-Svastara"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "testdatafactory431_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"PartsUnlimited_connectionString": {
+						"value": "[parameters('PartsUnlimited_connectionString')]"
+					},
+					"StorageForDataLake_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('StorageForDataLake_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"StorageForDataLake_properties_typeProperties_tenant": {
+						"value": "[parameters('StorageForDataLake_properties_typeProperties_tenant')]"
+					},
+					"StorageForDataLake_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('StorageForDataLake_properties_typeProperties_subscriptionId')]"
+					},
+					"StorageForDataLake_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('StorageForDataLake_properties_typeProperties_resourceGroupName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
