@@ -101,7 +101,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "Final",
 						"type": "DatasetReference"
 					}
 				]
